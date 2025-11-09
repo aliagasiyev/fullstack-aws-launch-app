@@ -3,7 +3,7 @@ files:
   - name: dal.py
     visible: true
     placeholders:
-      - offset: 1267
+      - offset: 2063
         length: 43
         placeholder_text: "# TODO: delete the device from the database"
         initial_state:
@@ -13,7 +13,7 @@ files:
         encrypted_possible_answer: xRz08YyzSXbF4iNaaTvGNkxT3Ok6K2D8r5v5ZPCDZz4=
         selected: false
         status: Solved
-      - offset: 1322
+      - offset: 2118
         length: 9
         placeholder_text: '"message"'
         initial_state:
@@ -30,7 +30,7 @@ files:
   - name: api.py
     visible: true
     placeholders:
-      - offset: 1376
+      - offset: 1652
         length: 185
         placeholder_text: |-
           if identifier not in devices:
@@ -54,12 +54,5 @@ files:
   - name: tests/test_task.py
     visible: false
     learner_created: false
-  - name: storage.db
-    visible: true
-    is_binary: true
-    learner_created: true
 status: Solved
-feedback:
-  message: Congratulations!
-  time: "Thu, 30 Oct 2025 17:39:41 UTC"
 record: -1

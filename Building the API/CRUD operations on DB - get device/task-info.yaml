@@ -3,7 +3,7 @@ files:
   - name: dal.py
     visible: true
     placeholders:
-      - offset: 575
+      - offset: 842
         length: 58
         placeholder_text: "# TODO: return None if the id is not found in the database"
         initial_state:
@@ -13,7 +13,7 @@ files:
         encrypted_possible_answer: dOe8R7Cp8zHSG+T5iPDK3kz1vkZ4/fw7o9FxApWYlAp50UC89dMsBbJkGyWeN/6w+JSGmhW0osfi96qQvqRWgA==
         selected: false
         status: Solved
-      - offset: 649
+      - offset: 916
         length: 56
         placeholder_text: '"Return the device from the database accessed by the id"'
         initial_state:
@@ -30,7 +30,7 @@ files:
   - name: api.py
     visible: true
     placeholders:
-      - offset: 1504
+      - offset: 1000
         length: 32
         placeholder_text: device = devices.get(identifier)
         initial_state:
@@ -50,12 +50,5 @@ files:
   - name: tests/test_task.py
     visible: false
     learner_created: false
-  - name: storage.db
-    visible: true
-    is_binary: true
-    learner_created: true
 status: Solved
-feedback:
-  message: Congratulations!
-  time: "Wed, 29 Oct 2025 21:08:10 UTC"
 record: -1

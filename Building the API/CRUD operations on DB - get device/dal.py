@@ -2,45 +2,63 @@ import shelve
 from flask import g
 
 
-# Open (or create) the shelve DB and cache it on Flask g.
+# This function creates a database if none has yet been created,
+# or opens it if it's already there.
 def pull_db():
     db_ = getattr(g, '_database', None)
     if db_ is None:
-        db_ = g._database = shelve.open("storage", writeback=False)
+        db_ = g._database = shelve.open("storage")
     return db_
 
 
-# Return entire dataset as a dict (DO NOT close the shelf)
+# This function returns the entire dataset of devices as a dictionary
 def get():
-    db = pull_db()
-    return {key: db[key] for key in db.keys()}
+    with pull_db() as shelf:
+        keys = list(shelf.keys())
+        devices_ = {}
+        for key in keys:
+            devices_[key] = shelf[key]
+    return devices_
 
 
-# Add a new element to the datastore (DO NOT close the shelf)
+# This function adds a new element to the datastore of devices
 def post(args):
-    db = pull_db()
-    db[args['id']] = args
-    db.sync()
-    return db[args['id']]
+    with pull_db() as shelf:
+        shelf[args['id']] = args
+        return shelf[args['id']]
 
 
-# Retrieve an item by its identifier; return None if not found
+# This function retrieves an item by its identifier and returns it
 def get_device(identifier):
-    db = pull_db()
-    if identifier not in db:
-        return None
-    return db[identifier]
+    with pull_db() as shelf:
+
+        # TODO: return None if the id is not found in the database
+        return "Return the device from the database accessed by the id"
 
 
-# Initial seed (only for first run)
-devices = {
-    "001": {"id": "001", "name": "Light bulb",      "location": "hall",    "status": "off"},
-    "002": {"id": "002", "name": "Humidity_sensor", "location": "bedroom", "status": "on"},
-    "003": {"id": "003", "name": "Humidifier",      "location": "bedroom", "status": "off"},
+# A Dict of Dicts to define initial devices
+devices = {"001": {
+    "id": "001",
+    "name": "Light bulb",
+    "location": "hall",
+    "status": "off"
+},
+    "002": {
+        "id": "002",
+        "name": "Humidity_sensor",
+        "location": "bedroom",
+        "status": "on"
+    },
+    "003": {
+        "id": "003",
+        "name": "Humidifier",
+        "location": "bedroom",
+        "status": "off"
+    }
 }
 
-# Seed storage if keys missing (run-time safe)
-with shelve.open('storage', writeback=False) as db:
-    for key, value in devices.items():
-        if key not in db:
-            db[key] = value
+# Initialize db with some data already in it
+with shelve.open('storage') as db:
+    for key, value, in devices.items():
+        db[key] = value
+

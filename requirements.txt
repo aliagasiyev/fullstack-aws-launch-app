@@ -5,8 +5,5 @@ werkzeug<3.0
 requests<2.29.0
 urllib3<2.0
 flask-unittest
-# Pin aiohttp to version with better Windows ARM64 support
-aiohttp>=3.8,<3.13
-aiodocker>=0.21.0
 docker~=6.0.1
 marshmallow

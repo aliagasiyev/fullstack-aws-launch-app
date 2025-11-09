@@ -3,7 +3,7 @@ files:
   - name: dal.py
     visible: true
     placeholders:
-      - offset: 701
+      - offset: 616
         length: 40
         placeholder_text: "# TODO: create the database shelf object"
         initial_state:
@@ -13,7 +13,7 @@ files:
         encrypted_possible_answer: iEJmfkECsaYcoDT/u+DvgXWqo1YMV22EX4o9EIGd1EA=
         selected: false
         status: Solved
-      - offset: 750
+      - offset: 665
         length: 89
         placeholder_text: "# TODO: Check if the id already exists in the shelf, and if\
       \ so--returnin an error message"
@@ -24,7 +24,7 @@ files:
         encrypted_possible_answer: Pf0rZo/CezSduIAbGuhdOHW9U3pTv9coJejZnGuCxN//YhsQHMcyHEqiQwDo/kQss9X4BcSs15h/L2wliALBTVG8fTLwar8EQCP4EUmIQe34tBZEOPGif3EHmjqhGXKB
         selected: false
         status: Solved
-      - offset: 904
+      - offset: 819
         length: 62
         placeholder_text: "# TODO: add the data about the new item from args to the shelf"
         initial_state:
@@ -47,7 +47,7 @@ files:
   - name: api.py
     visible: true
     placeholders:
-      - offset: 1399
+      - offset: 2028
         length: 147
         placeholder_text: |-
           try:
@@ -59,9 +59,9 @@ files:
           offset: 2028
         initialized_from_dependency: false
         encrypted_possible_answer: e6x5UulFg/re2DAYhgDzi4NDMJDPgEOp7Va5BNC+w/+3qnSK3r1PbsV893cWTBLWkuuobt8wFwaKLPW5LWHa1PlgUsHoJ7Ss/FagWaM2pg0cCqbYaC6Yhfz5FSyHc+cr8cd4Np5B7LZcZ4riAl8zLz368GDaOXvxKsaeEdtZesGnSe8YFQtfQFnJ7Z/KJ0fPitV75g5kK690go4thc/A0pZJgL4X9E+GyptmdQkNb/Q=
-        selected: true
+        selected: false
         status: Solved
-      - offset: 1556
+      - offset: 2185
         length: 223
         placeholder_text: |-
           if new_device["id"] in devices:
@@ -80,12 +80,5 @@ files:
   - name: tests/api_test.py
     visible: false
     learner_created: false
-  - name: storage.db
-    visible: true
-    is_binary: true
-    learner_created: true
 status: Solved
-feedback:
-  message: Congratulations!
-  time: "Wed, 29 Oct 2025 21:06:46 UTC"
 record: -1
